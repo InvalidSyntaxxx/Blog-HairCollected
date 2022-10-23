@@ -1,4 +1,5 @@
 {
+  // TypeScript编译器选项
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,
@@ -8,10 +9,17 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    // esbuild 只执行没有类型信息的转译，
+    // 它并不支持某些特性，如 const enum 和隐式类型导入。
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "skipLibCheck": true
+    // 一些库（如：vue）不能很好地与 "isolatedModules": true 共同工作。
+    // 你可以在上游仓库修复好之前暂时使用 "skipLibCheck": true 来缓解这个错误。
+    "skipLibCheck": true,
+    // Vite 默认的类型定义是写给它的 Node.js API 的。
+    // 要将其补充到一个 Vite 应用的客户端代码环境中
+    "types":["vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
