@@ -1,6 +1,7 @@
 {
   // TypeScript编译器选项
   "compilerOptions": {
+    "allowJs": true,
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -21,6 +22,6 @@
     // 要将其补充到一个 Vite 应用的客户端代码环境中
     "types":["vite/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/mock/index.ts", "src/mock/index.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

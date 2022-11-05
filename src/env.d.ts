@@ -6,3 +6,4 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+declare module 'mockjs'; //这是什么原理？
