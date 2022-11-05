@@ -1,103 +1,65 @@
-<!--
+<!-- 
  * @Descripttion: 
  * @version: 
  * @Author: 王远昭
  * @Date: 2022-11-01 18:10:26
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-04 15:26:09
+ * @LastEditTime: 2022-11-06 00:09:48
 -->
 <!-- 导航栏组件 -->
 <script setup lang="ts">
-import axios from 'axios';
-import { NDropdown, NButton, NAvatar, NText, useMessage } from 'naive-ui';
-import { h, onMounted, ref } from 'vue';
-
-interface User {
-    id: number,
-    username: string,
-    description: string,
-    avatar: string
-}
-// const emit = defineEmits(['inFoucs','submit','increse'])
-
-let user = ref<User>()
-let message = useMessage()
-let label1 = '被@89次'
-let label2 = '加入群100个'
-let options = [
-    {
-        key: 'header',
-        type: 'render',
-        render: rederCustomerHeader
-    },
-    {
-        key: 'header-divider',
-        type: 'divider'
-    },
-    {
-        label: label1,
-        key: 'stmt2'
-    },
-    {
-        label: label2,
-        key: 'stmt3'
-    }
-]
-
-function getUserData(username: string) {
-    axios.get('api/getUser/' + username)
-        .then((res) => {
-            user.value = res.data.data //赋值时ref需要付给.value属性、
-            // message.info(JSON.stringify(user.value))
-        })
-        .catch(err => {
-            console.log(err)
-        })
-}
-function rederCustomerHeader() {
-    return h(
-        'div',
-        {
-            style: 'display:flex;align-items:center;padding:8px 12px;'
-        },
-        [
-            h(NAvatar, {
-                round: true,
-                style: 'margin-right:12px;',
-                src: user.value?.avatar
-            }),
-            h(
-                'div', null, [
-                h('div', null, [h(NText, { depth: 2 }, { default: () => user.value?.username })]),
-                h('div', { style: 'font-size:12px;' }, [
-                    h(
-                        NText,
-                        { depth: 3 },
-                        {
-                            default: () => user.value?.description
-                        }
-                    )
-                ])
-            ]
-            )
-        ]
-    )
-}
-function handleSelect(key: string | number) {
-    message.info(String(key))
-}
-
-onMounted(() => {
-    getUserData("admin")
-})
-
+import { NIcon } from "naive-ui";
+import { HomeOutline } from "@vicons/ionicons5";
+import dropdown from "./dropdown.vue";
+let baseLogoUrl =
+  "https://wangwangyz.site/my/static/cropped-%E7%AB%99%E7%82%B9logo.png";
+let size = { smallsize: 28, mediumsize: 32, largesize: 36 };
 </script>
 <template>
-    <header>
-        <n-dropdown trigger="click" :options="options" @select="handleSelect">
-            <n-button @click="$emit('increase',1)">
-                关于我
-            </n-button>
-        </n-dropdown>
-    </header>
+  <div class="nav-container">
+    <div class="nav-left">
+        <!-- 下拉菜单 -->
+        <dropdown :size="size.mediumsize"></dropdown>
+    </div>
+    <!-- 中间主页 -->
+    <!-- //设置一个jump to！ -->
+    <div class="nav-middle" @click="/\/home/"> 
+      <n-icon :size="size.smallsize">
+        <HomeOutline />
+      </n-icon>
+    </div>
+    <!-- 博客个人信息 -->
+    <div class="nav-right">
+      <img :src="baseLogoUrl" alt="Logo" />
+    </div>
+  </div>
 </template>
+<style scoped>
+* {
+  max-width: 100vw;
+  display: inline-block;
+}
+.nav-container{
+    width: 100vw;
+    /* padding-left: 2rem; */
+    /* padding-right: 2rem ; */
+}
+.nav-left{
+    width: 2rem;
+}
+.nav-middle {
+  text-align: center;
+  width: calc(100% - 4rem - 5px);  /* 目前的办法就是这个了 */
+}
+.nav-right {
+    box-sizing: border-box;
+  width: 2rem;
+  float: right;
+  margin-right: 5px;
+  padding-top: 4px;
+}
+.nav-right > img {
+  user-select: none;
+  max-width: 2rem;
+}
+</style>

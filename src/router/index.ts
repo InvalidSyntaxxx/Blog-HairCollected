@@ -4,11 +4,11 @@
  * @Author: 王远昭
  * @Date: 2022-10-30 20:17:51
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-02 13:06:39
+ * @LastEditTime: 2022-11-05 20:10:16
  */
 import { createRouter, createWebHashHistory } from "vue-router";
-import LoginView from '../views/login.vue'
-import RegisterView from '../views/register.vue'
+import LoginView from '../views/Login/login.vue'
+import RegisterView from '../views/Register/register.vue'
 import NotFoundView from '../views/404/404.vue'
 import HomeView from '../views/Home/index.vue'
 const routes = [
