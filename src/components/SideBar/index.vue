@@ -30,7 +30,7 @@ provide('active',active);
     <div class="drawer">
       <n-drawer
         :placement="placement"
-        :width:="sideBarWidth"
+        :width="sideBarWidth"
         v-model:show="active"
         :trap-focus="false"
         :block-scroll="false"
