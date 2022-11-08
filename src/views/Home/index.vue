@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-02 13:03:16
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-05 21:21:19
+ * @LastEditTime: 2022-11-08 21:57:17
 -->
 <script setup lang="ts">
 import { ref } from "vue";
@@ -18,8 +18,9 @@ import {
 } from "naive-ui";
 import Navigation from "../../components/NavigationBar/index.vue";
 import carousel from "./carousel.vue";
-import channelComponent from "./newest.vue";
+import newComponent from "./newest.vue";
 import tabs from "./tabs.vue";
+import player from "../../components/Player/index.vue";
 </script>
 <template>
   <n-space>
@@ -28,28 +29,20 @@ import tabs from "./tabs.vue";
       <n-layout-header style="">
         <Navigation></Navigation>
       </n-layout-header>
-
-      <n-layout has-sider>
-        <!-- 左侧内容部分 -->
-        <n-layout-sider content-style="padding: 0 1psx 0 0;" width="61.8%">
+      <n-layout>
+        <!-- 侧边栏容器-->
+        <div id="sideBarContainer"></div>
+        <!-- <n-layout-sider content-style="padding: 0 1psx 0 0;" width="100%"> -->
           <!-- 轮播图 -->
           <carousel />
-        </n-layout-sider>
-
-        <!-- 右侧内容部分 -->
-        <n-layout-content style="padding:0">
-          <!-- 右侧频道 -->
-          <channelComponent />
-        </n-layout-content>
+        <!-- </n-layout-sider> -->
+        <!-- 中间频道部分 -->
+        <div>
+          <player />
+        </div>
+        <!-- Footer部分 -->
+        <tabs />
       </n-layout>
-
-      <!-- Footer部分 -->
-      <n-layout-footer>
-        <!-- Tabs -->
-        <n-layout-content>
-          <tabs />
-        </n-layout-content>
-      </n-layout-footer>
     </n-layout>
   </n-space>
 </template>

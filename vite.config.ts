@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-07-04 19:37:34
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-10-31 16:06:37
+ * @LastEditTime: 2022-11-08 11:06:24
  */
 import { defineConfig } from 'vite'
 
@@ -21,4 +21,5 @@ export default defineConfig({
     host: "0.0.0.0",
     hmr: true,
     },
+    
 })

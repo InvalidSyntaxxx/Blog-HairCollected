@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-08 16:03:06
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-08 21:06:07
+ * @LastEditTime: 2022-11-08 21:53:59
 -->
 <script setup lang="ts">
 import { NIcon, DrawerPlacement, NDrawer, NDrawerContent } from "naive-ui";
@@ -27,25 +27,21 @@ provide('active',active);
 <template>
   <div class="wrapper" >
     <SideBarIcon v-model:active="active" @activate="activate"/>
-    <div>
+    <div class="drawer">
       <n-drawer
         :placement="placement"
         :width:="sideBarWidth"
         v-model:show="active"
         :trap-focus="false"
         :block-scroll="false"
-        to="#drawer-target"
+        to="#sideBarContainer"
       >
-        <n-drawer-content title="掉发收集站" closable>
+        <n-drawer-content title="掉发收集站">
           <div>
             <!-- 左侧内容 -->
           </div>
         </n-drawer-content>
       </n-drawer>
-    </div>
-
-    <div id="drawer-target">
-      <!-- 侧边栏实际位置 -->
     </div>
   </div>
 </template>

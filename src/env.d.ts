@@ -1,3 +1,12 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: 王远昭
+ * @Date: 2022-07-04 19:37:34
+ * @LastEditors: 王远昭
+ * @LastEditTime: 2022-11-08 15:40:56
+ */
+//三斜线指令：https://www.tslang.cn/docs/handbook/triple-slash-directives.html
 /// <reference types="vite/client" />
 
 declare module '*.vue' {

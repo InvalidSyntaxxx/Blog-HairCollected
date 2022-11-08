@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-05 17:51:35
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-05 22:10:01
+ * @LastEditTime: 2022-11-06 17:36:17
 -->
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
@@ -55,10 +55,6 @@ onMounted(() => {
   <div v-if="newests">
     <p class="title">
       最新
-      <n-icon>
-        <!-- 跳转箭头 -->
-        <ArrowForwardCircleOutline />
-      </n-icon>
     </p>
     <n-divider />
     <div class="channelcard" v-for="newest in newests">
@@ -72,10 +68,13 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-.n-divider:not(.n-divider--vertical):nth-child(1){
+*{
+  --title-color: #32c422
+}
+.n-divider:not(.n-divider--vertical):nth-child(1) {
   margin-top: 110px;
 }
-.n-divider:not(.n-divider--vertical){
+.n-divider:not(.n-divider--vertical) {
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -83,60 +82,73 @@ onMounted(() => {
   max-height: 5rem;
   width: 100vw;
 }
-.channelcard:hover{
+.channelcard:hover {
   background-color: rgb(241, 241, 241);
 }
 .title {
-  font-size: large;
-  /* before触发的前提 */
   position: relative;
-  padding-left: 0.25rem;
-  padding-bottom: 0;
+  display: inline-block;
+  margin-right: 16px;
+  margin-left: 2px;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 32px;
+  background-color: var(--title-color);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
 }
 .title::before {
-  content: "";
   position: absolute;
-  background: linear-gradient(#d4fc79, #96e6a1);
-  bottom: -4px;
-  height: 0.25rem;
-  width: 2rem;
-  border-radius: 0.25rem;
+  top: -4px;
+  left: 0;
+  border-width: 2px 4px;
+  border-style: solid;
+  border-color: transparent var(--title-color) var(--title-color) transparent;
+  content: "";
 }
-
+.title::after {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  border-width: 16px 8px 16px 0;
+  border-style: solid;
+  border-color: var(--title-color) transparent var(--title-color) var(--title-color);
+  content: "";
+}
 .new-title {
   position: relative;
   padding-left: 0.5rem;
   padding-top: 12px;
   padding-bottom: 0px;
   margin-bottom: 12px;
-  
 }
-.new-title::before{
+.new-title::before {
   position: absolute;
   content: "";
   bottom: -1px;
   width: 0;
   height: 0.25rem;
   background: linear-gradient(#d4fc79, #96e6a1);
-  
 }
-.new-title:hover::before{
+.new-title:hover::before {
+  width: 100%;
   animation: bolan 2s;
 }
-@keyframes bolan{
-  0%{
+@keyframes bolan {
+  0% {
     width: 0;
   }
-  30%{
-    width:4rem
+  30% {
+    width: 4rem;
   }
-  60%{
+  60% {
     width: 5rem;
   }
-  80%{
+  80% {
     width: 6rem;
   }
-  100%{
+  100% {
     width: 100%;
   }
 }
