@@ -4,21 +4,23 @@
  * @Author: 王远昭
  * @Date: 2022-11-08 16:03:06
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-08 21:53:59
+ * @LastEditTime: 2022-11-08 23:02:47
 -->
 <script setup lang="ts">
-import { NIcon, DrawerPlacement, NDrawer, NDrawerContent } from "naive-ui";
+import { DrawerPlacement, NDrawer, NDrawerContent } from "naive-ui";
 import { provide, ref } from "vue";
-import { ReorderThree, Close } from "@vicons/ionicons5";
 import SideBarIcon from './sideBarIcon.vue';
+import { getWidth } from "../../utils/calc";
 
 
-let sideBarWidth = 502;
+let sideBarWidth = getWidth(0.618);
+
 let active = ref(false);
 let placement = ref<DrawerPlacement>("left");
 const activate = (place: DrawerPlacement) => {
   active.value = !active.value;
   placement.value = place;
+
 };
 
 provide('active',active);

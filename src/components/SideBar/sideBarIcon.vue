@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-08 19:25:06
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-08 21:11:57
+ * @LastEditTime: 2022-11-08 23:01:19
 -->
 
 <!-- 1、对于父组件监听子组件事件，子组件向父组件传值——emit
@@ -15,18 +15,11 @@
 import { inject, ref } from "vue";
 
 const active = inject('active')
-// const props = defineProps({
-//   active: Boolean,
-// });
-// const emit = defineEmits(['activate'])
 let iconclass = ref({
   icon: true,
   active: active,
 });
 
-// const handlerClick = (e:Event)=>{
-    // emit('activate','left')
-// }
 </script>
 <template>
   <div class="sidebar-button" @click="$emit('activate','left')">
