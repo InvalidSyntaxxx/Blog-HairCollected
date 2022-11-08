@@ -20,7 +20,8 @@
     "skipLibCheck": true,
     // Vite 默认的类型定义是写给它的 Node.js API 的。
     // 要将其补充到一个 Vite 应用的客户端代码环境中
-    "types":["vite/client"]
+    // "types":["vite/client"]
+    "types": ["vitest/globals"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/mock/index.ts", "src/mock/index.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
