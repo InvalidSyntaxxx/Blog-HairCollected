@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-02 13:03:16
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-08 21:57:17
+ * @LastEditTime: 2022-11-09 19:27:43
 -->
 <script setup lang="ts">
 import { ref } from "vue";
@@ -19,6 +19,7 @@ import {
 import Navigation from "../../components/NavigationBar/index.vue";
 import carousel from "./carousel.vue";
 import newComponent from "./newest.vue";
+import banner from "../../components/Banner/index.vue";
 import tabs from "./tabs.vue";
 import player from "../../components/Player/index.vue";
 </script>
@@ -34,9 +35,10 @@ import player from "../../components/Player/index.vue";
         <div id="sideBarContainer"></div>
         <!-- <n-layout-sider content-style="padding: 0 1psx 0 0;" width="100%"> -->
           <!-- 轮播图 -->
-          <carousel />
+          <!-- <carousel /> -->
         <!-- </n-layout-sider> -->
         <!-- 中间频道部分 -->
+            <banner title="掉发收集站"/>
         <div>
           <player />
         </div>
