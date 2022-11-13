@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-09 19:26:39
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-10 00:26:56
+ * @LastEditTime: 2022-11-11 09:32:20
 -->
 <script lang="ts">
 import { onMounted, ref, getCurrentInstance } from "vue";
@@ -52,7 +52,7 @@ export default {
       function randomValue(arr: number[]) {
         return arr[Math.floor(Math.random() * arr.length)];
       }
-      function createrNode(size: number,color:string) {
+      function createNode(size: number,color:string) {
         const template =
           '<div class="individual-bubble" style="left: ' +
           randomValue(bArray) +
@@ -68,7 +68,7 @@ export default {
       }
       setInterval(function () {
         let size = randomValue(sArray);
-        let Node = createrNode(size,color);
+        let Node = createNode(size,color);
         bubbles!.appendChild(Node);
         Node.animate([
           { transform: "translateY(0px)", opacity: 0.7 }, 
