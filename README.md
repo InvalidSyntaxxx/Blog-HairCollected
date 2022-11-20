@@ -7,11 +7,10 @@
  * @LastEditTime: 2022-11-20 23:00:01
 -->
 
-## Vercel在线预览
+## 在线预览
 
-[https://blog-hair-collected.vercel.app/](https://blog-hair-collected.vercel.app/)
+[https://blog.wangwangyz.site](https://blog.wangwangyz.site/)
 
-注：Vercel国内被墙了，国内目前访问不了
 
 ## 掉发收集站开发记录
 
