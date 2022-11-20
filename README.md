@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-07-04 19:37:34
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-13 23:59:00
+ * @LastEditTime: 2022-11-20 23:00:01
 -->
 
 ## Vercel在线预览
@@ -53,3 +53,11 @@
 
 1. 添加TsParticle粒子背景
 2. 首页使用CoverFlow展示分类卡片
+
+#### 2022年11月20日22点58分
+
+1. 研究Git中两个分支 test1 和 main 的合并
+    
+    目前：test1中有 3 commits 先于 main；main中有 1 commit 先于 test1；
+    
+    欲：test1的改变合并到main
