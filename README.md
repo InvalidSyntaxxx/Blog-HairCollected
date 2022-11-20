@@ -49,4 +49,7 @@
 
    > steps函数:  https://github.com/VenenoFSD/Blog/issues/36
 
+#### 2022年11月20日22点35分
 
+1. 添加TsParticle粒子背景
+2. 首页使用CoverFlow展示分类卡片
