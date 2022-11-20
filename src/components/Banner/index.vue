@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-09 19:26:39
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-11 09:32:20
+ * @LastEditTime: 2022-11-20 21:24:07
 -->
 <script lang="ts">
 import { onMounted, ref, getCurrentInstance } from "vue";
@@ -97,18 +97,12 @@ export default {
 </template>
 <style lang="less" scoped>
 @import "lxgw-wenkai-lite-webfont/style.css";
-@font-num: 5; //标题字数
-
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
   .banner-outer {
     font-family: "LXGW WenKai Lite", sans-serif;
     display: table;
     width: 100%;
     height: 100%;
-    background-color: rgb(100, 104, 103);
+    background-color: var(--bg-color);
 
     .banner-inner {
       display: table-cell;
@@ -133,20 +127,10 @@ body {
       }
       .typing {
         color: rgb(229, 243, 229);
-        width: @font-num px;
         // animation: typing 2s steps(42, end), blink-caret 0.75s step-end infinite;
         word-break: break-all;
         overflow: hidden;
       }
     }
   }
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: (@font-num) rem;
-  }
-}
 </style>

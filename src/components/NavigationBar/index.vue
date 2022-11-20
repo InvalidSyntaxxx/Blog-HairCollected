@@ -4,63 +4,61 @@
  * @Author: 王远昭
  * @Date: 2022-11-01 18:10:26
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-08 21:51:37
+ * @LastEditTime: 2022-11-20 16:23:45
 -->
 <!-- 导航栏组件 -->
 <script setup lang="ts">
 import { NIcon } from "naive-ui";
-import { HomeOutline } from "@vicons/ionicons5";
+import { SearchOutline } from "@vicons/ionicons5";
 import goto from "../../utils/goto";
-import SideBar from "../SideBar/index.vue"
-let baseLogoUrl =
-  "https://wangwangyz.site/my/static/cropped-%E7%AB%99%E7%82%B9logo.png";
+import SideBar from "../SideBar/index.vue";
+import logo from "../../assets/logo.png";
+let baseLogoUrl = logo;
 let size = { smallsize: 28, mediumsize: 32, largesize: 36 };
 </script>
 <template>
   <div class="nav-container">
     <div class="nav-left">
       <!-- 侧边栏 -->
-        <SideBar/>
+      <SideBar />
     </div>
     <!-- 中间主页 -->
     <!-- //设置一个jump to！ -->
-    <div class="nav-middle" @click="goto('/register')"> 
-      <n-icon :size="size.smallsize">
-        <HomeOutline />
-      </n-icon>
+    <div class="nav-middle" @click="goto('/register')">
+      <img :src="baseLogoUrl" alt="Logo" />
     </div>
     <!-- 博客个人信息 -->
     <div class="nav-right">
-      <img :src="baseLogoUrl" alt="Logo" />
+      <n-icon :size="size.smallsize">
+        <SearchOutline />
+      </n-icon>
     </div>
   </div>
 </template>
-<style scoped>
+<style scoped lang="less">
 * {
   max-width: 100vw;
   display: inline-block;
-}
-.nav-container{
+  .nav-container {
     width: 100vw;
-    /* padding-left: 2rem; */
-    /* padding-right: 2rem ; */
-}
-.nav-left{
-    width: 2rem;
-}
-.nav-middle {
-  text-align: center;
-  width: calc(100% - 4rem - 5px);  /* 目前的办法就是这个了 */
-}
-.nav-right {
-    box-sizing: border-box;
-  width: 2rem;
-  float: right;
-  margin-right: 5px;
-  padding-top: 4px;
-}
-.nav-right > img {
-  user-select: none;
-  max-width: 2rem;
+    .nav-left {
+      width: 2rem;
+    }
+    .nav-middle {
+      text-align: center;
+      width: calc(100% - 4rem - 5px); /* 目前的办法就是这个了 */
+      img {
+        user-select: none;
+        max-width: 2rem;
+      }
+    }
+    .nav-right {
+      box-sizing: border-box;
+      width: 2rem;
+      float: right;
+      margin-right: 5px;
+      padding-top: 4px;
+    }
+  }
 }
 </style>

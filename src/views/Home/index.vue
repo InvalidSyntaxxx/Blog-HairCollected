@@ -4,24 +4,18 @@
  * @Author: 王远昭
  * @Date: 2022-11-02 13:03:16
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-09 19:27:43
+ * @LastEditTime: 2022-11-20 17:57:31
 -->
 <script setup lang="ts">
 import { ref } from "vue";
 import {
   NSpace,
   NLayout,
-  NLayoutHeader,
-  NLayoutSider,
-  NLayoutContent,
-  NLayoutFooter,
-} from "naive-ui";
+  NLayoutHeader}
+from "naive-ui";
 import Navigation from "../../components/NavigationBar/index.vue";
-import carousel from "./carousel.vue";
-import newComponent from "./newest.vue";
 import banner from "../../components/Banner/index.vue";
-import tabs from "./tabs.vue";
-import player from "../../components/Player/index.vue";
+import coverflow from "../../components/CoverFlow/index.vue";
 </script>
 <template>
   <n-space>
@@ -33,17 +27,12 @@ import player from "../../components/Player/index.vue";
       <n-layout>
         <!-- 侧边栏容器-->
         <div id="sideBarContainer"></div>
-        <!-- <n-layout-sider content-style="padding: 0 1psx 0 0;" width="100%"> -->
-          <!-- 轮播图 -->
-          <!-- <carousel /> -->
-        <!-- </n-layout-sider> -->
-        <!-- 中间频道部分 -->
+        <!-- 中间Banner部分 -->
             <banner title="掉发收集站"/>
-        <div>
-          <player />
-        </div>
+
+        <!-- CoverFlow部分 -->
+        <coverflow/>
         <!-- Footer部分 -->
-        <tabs />
       </n-layout>
     </n-layout>
   </n-space>
