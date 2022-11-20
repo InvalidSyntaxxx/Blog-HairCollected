@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-10-26 16:40:24
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-05 21:11:37
+ * @LastEditTime: 2022-11-20 22:24:36
  */
 
 // 参考：https://github.com/nuysoft/Mock/wiki/Mock.mock()
@@ -14,7 +14,7 @@ Mock.setup({
   timeout: "400-600",
 });
 //随想录接口
-Mock.mock("/api/getNote", "get", {
+Mock.mock("/api/Note", "get", {
   code: "0",
   message: "success",
   data: {
@@ -30,7 +30,7 @@ Mock.mock("/api/getNote", "get", {
   },
 });
 //管理员数据接口
-Mock.mock(/api\/getUser\/admin/, "get", {
+Mock.mock(/api\/User\/admin/, "get", {
   code: 200,
   message: "success",
   data: {
@@ -41,7 +41,7 @@ Mock.mock(/api\/getUser\/admin/, "get", {
   },
 });
 //王远昭数据接口
-Mock.mock(/api\/getUser\/王远昭/, "get", {
+Mock.mock(/api\/User\/王远昭/, "get", {
   code: 200,
   message: "success",
   data: {
@@ -53,8 +53,8 @@ Mock.mock(/api\/getUser\/王远昭/, "get", {
       "热爱前后端技术,正在拥抱Web3,还喜欢耍酷.ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
   },
 });
-//Tabs数据接口
-Mock.mock(/api\/getTabs/, "get", {
+//Channel数据接口
+Mock.mock(/api\/Channel/, "get", {
   code: 200,
   message: "success",
   data: [
@@ -62,7 +62,7 @@ Mock.mock(/api\/getTabs/, "get", {
       "id|5-10": Mock.Random.natural(1, 9),
       name: "实验",
       picture:
-        "https://www.wangwangyz.site/%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E5%AE%9D%E8%B4%9D/7daea85545cd2f20.jpg",
+        "https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6b4e41a670c097c8fd2834579f5d5958&auto=format&fit=crop&w=633&q=80",
       description: "这是王远昭的实验室",
       status: "开发中",
     },
@@ -70,7 +70,7 @@ Mock.mock(/api\/getTabs/, "get", {
       "id|5-10": Mock.Random.natural(1, 9),
       name: "文章",
       picture:
-        "https://www.wangwangyz.site/%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E5%AE%9D%E8%B4%9D/7daea85545cd2f20.jpg",
+        "https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&s=739aef35459daa8aaeaa55363d492bc1&auto=format&fit=crop&w=673&q=80",
       description: "我写了一些小文章，供诸位参阅。",
       status: "有点爆满了",
     },
@@ -78,7 +78,7 @@ Mock.mock(/api\/getTabs/, "get", {
       "id|5-10": Mock.Random.natural(1, 9),
       name: "说说",
       picture:
-        "https://www.wangwangyz.site/%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E5%AE%9D%E8%B4%9D/7daea85545cd2f20.jpg",
+        "https://images.unsplash.com/photo-1502768040783-423da5fd5fa0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c6416353c255d2746a68c8a83943bdf&auto=format&fit=crop&w=634&q=80",
       description: "深夜emo，别看....",
       status: "写得少",
     },
@@ -86,14 +86,22 @@ Mock.mock(/api\/getTabs/, "get", {
       "id|5-10": Mock.Random.natural(1, 9),
       name: "游戏乐园",
       picture:
-        "https://www.wangwangyz.site/%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E5%AE%9D%E8%B4%9D/7daea85545cd2f20.jpg",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a138cf8acd85036bd292d7f10074e79&auto=format&fit=crop&w=634&q=80",
       description: "我是不可能会写游戏的！",
       status: "都说不会有",
     },
+    {
+      "id|5-10": Mock.Random.natural(1, 9),
+      name: "时光轴",
+      picture:
+        "https://images.unsplash.com/photo-1500080209535-717dd4ebaa6b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ddee81e2e574e8190b07139ddb0f1938&auto=format&fit=crop&w=687&q=80",
+      description: "不念过去、不畏将来",
+      status: "emo",
+    }
   ],
 });
 
-Mock.mock(/api\/getNewest/, "get", {
+Mock.mock(/api\/Newest/, "get", {
   code: 200,
   message: "success",
   data: [
