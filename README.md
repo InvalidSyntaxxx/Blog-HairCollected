@@ -7,11 +7,10 @@
  * @LastEditTime: 2022-11-20 23:00:01
 -->
 
-## Vercel在线预览
+## 在线预览
 
-[https://blog-hair-collected.vercel.app/](https://blog-hair-collected.vercel.app/)
+[https://blog.wangwangyz.site](https://blog.wangwangyz.site/)
 
-注：Vercel国内被墙了，国内目前访问不了
 
 ## 掉发收集站开发记录
 
@@ -61,6 +60,7 @@
     目前：test1中有 3 commits 先于 main；main中有 1 commit 先于 test1；
     
     欲：test1的改变合并到main
+<<<<<<< HEAD
     
     > **23点27分已成功~**
     >
@@ -72,3 +72,5 @@
     > 6. git push （推到main）
     >
     > 
+=======
+>>>>>>> 3a035927187aad30f54f509cb013a591508ca2e5
