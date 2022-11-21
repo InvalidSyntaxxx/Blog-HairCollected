@@ -57,7 +57,18 @@
 #### 2022年11月20日22点58分
 
 1. 研究Git中两个分支 test1 和 main 的合并
-    
+   
     目前：test1中有 3 commits 先于 main；main中有 1 commit 先于 test1；
     
     欲：test1的改变合并到main
+    
+    > **23点27分已成功~**
+    >
+    > 1. 切换到test1分支 git checkout test1 （如果已经在master分支则不需要）
+    > 2. git pull （拉取代码）
+    > 3. git checkout main （切换到main分支）
+    > 4. 代码如有冲突则解决冲突，没有则忽略此步
+    > 5. git merge test1 （合并代码）
+    > 6. git push （推到main）
+    >
+    > 
