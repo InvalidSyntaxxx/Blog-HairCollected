@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-08 16:03:06
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-08 23:02:47
+ * @LastEditTime: 2022-11-21 14:43:26
 -->
 <script setup lang="ts">
 import { DrawerPlacement, NDrawer, NDrawerContent } from "naive-ui";
@@ -40,7 +40,11 @@ provide('active',active);
       >
         <n-drawer-content title="掉发收集站">
           <div>
+            <!-- 左侧标题 -->
+            <h1>公告</h1>
             <!-- 左侧内容 -->
+            什么都没做呢，别急...
+
           </div>
         </n-drawer-content>
       </n-drawer>
