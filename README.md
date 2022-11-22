@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-07-04 19:37:34
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-20 23:00:01
+ * @LastEditTime: 2022-11-22 22:21:16
 -->
 
 ## 在线预览
@@ -60,8 +60,6 @@
     目前：test1中有 3 commits 先于 main；main中有 1 commit 先于 test1；
     
     欲：test1的改变合并到main
-<<<<<<< HEAD
-    
     > **23点27分已成功~**
     >
     > 1. 切换到test1分支 git checkout test1 （如果已经在master分支则不需要）
@@ -72,5 +70,9 @@
     > 6. git push （推到main）
     >
     > 
-=======
->>>>>>> 3a035927187aad30f54f509cb013a591508ca2e5
+
+#### 2022年11月22日22点18分
+
+1. 看到Varlet组件库的水纹效果，自己也试着添加
+   跟着：[https://codepen.io/finnhvman/pen/jLXKJw](https://codepen.io/finnhvman/pen/jLXKJw)学习效仿了，效果一般，日后改进
+2. 对 display和float属性有点不了解，行内元素和内联元素都有哪些？
