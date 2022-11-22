@@ -1,4 +1,23 @@
 // 全局样式配置，主管全局变量
 body{
-    --bg-color: rgb(67, 67, 67);
+    --bg-color: rgb(103, 103, 103);
+    --nav-color:rgb(152, 226, 68);
+    --ripple-color:rgba(255, 255, 255, 0.7);
 }
+
+/* Ripple effect */
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+  
+  &:hover {
+    background: radial-gradient(circle, transparent 1%, var(--nav-color) 1%) center/15000%;
+  }
+  &:active {
+    background-color: var(--ripple-color);
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+  
+  

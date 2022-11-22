@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-01 18:10:26
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-20 16:23:45
+ * @LastEditTime: 2022-11-22 20:49:05
 -->
 <!-- 导航栏组件 -->
 <script setup lang="ts">
@@ -18,7 +18,7 @@ let size = { smallsize: 28, mediumsize: 32, largesize: 36 };
 </script>
 <template>
   <div class="nav-container">
-    <div class="nav-left">
+    <div class="nav-left ripple">
       <!-- 侧边栏 -->
       <SideBar />
     </div>
@@ -40,9 +40,11 @@ let size = { smallsize: 28, mediumsize: 32, largesize: 36 };
   max-width: 100vw;
   display: inline-block;
   .nav-container {
+    display: flex;
+    justify-content: center;
     width: 100vw;
     .nav-left {
-      width: 2rem;
+      width: 4rem;
     }
     .nav-middle {
       text-align: center;

@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-02 13:03:16
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-20 17:57:31
+ * @LastEditTime: 2022-11-22 22:16:02
 -->
 <script setup lang="ts">
 import { ref } from "vue";
@@ -32,6 +32,8 @@ import coverflow from "../../components/CoverFlow/index.vue";
 
         <!-- CoverFlow部分 -->
         <coverflow/>
+       
+       
         <!-- Footer部分 -->
       </n-layout>
     </n-layout>
@@ -48,7 +50,7 @@ import coverflow from "../../components/CoverFlow/index.vue";
 }
 .n-layout-header {
   /* width: 100%; */
-  background: linear-gradient(45deg, #4af884, #90f6e3, #82e2c4);
+  background: var(--nav-color);
 }
 
 .n-layout-scroll-container {

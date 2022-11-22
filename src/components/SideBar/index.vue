@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-08 16:03:06
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-21 14:43:26
+ * @LastEditTime: 2022-11-22 20:38:47
 -->
 <script setup lang="ts">
 import { DrawerPlacement, NDrawer, NDrawerContent } from "naive-ui";
@@ -59,7 +59,7 @@ provide('active',active);
   bottom: -5px;
 }
 .wrapper {
-  // position: relative;
+  display: block;
 }
 
 #drawer-target {
@@ -68,4 +68,5 @@ provide('active',active);
   height: 100vh;
   // top: 4rem
 }
+
 </style>
