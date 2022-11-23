@@ -4,15 +4,35 @@
  * @Author: 王远昭
  * @Date: 2022-07-04 19:37:34
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-22 22:21:16
+ * @LastEditTime: 2022-11-23 23:00:59
 -->
 
 ## 在线预览
 
 [https://blog.wangwangyz.site](https://blog.wangwangyz.site/)
 
+## 本地运行
 
-## 掉发收集站开发记录
+##### 安装开发环境
+
+```
+npm install
+```
+
+##### 启动开发环境
+
+```
+npm run dev
+```
+
+##### 打包生产环境
+
+```
+npm run build
+```
+
+
+## 开发记录
 
 ### 日志
 
