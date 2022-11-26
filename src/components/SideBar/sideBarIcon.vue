@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-08 19:25:06
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-08 23:01:19
+ * @LastEditTime: 2022-11-24 16:03:12
 -->
 
 <!-- 1、对于父组件监听子组件事件，子组件向父组件传值——emit
@@ -14,67 +14,79 @@
 <script setup lang="ts">
 import { inject, ref } from "vue";
 
-const active = inject('active')
+const active = inject<boolean>('active')
 let iconclass = ref({
   icon: true,
   active: active,
 });
 
+
 </script>
 <template>
-  <div class="sidebar-button" @click="$emit('activate','left')">
-    <div :class="iconclass">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
+  <label for="check" class="sidebar-button" @change="$emit('activate', 'left')">
+    <input type="checkbox" id="check" :checked="iconclass.active"/>
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 </template>
 <style lang="less" scoped>
 @text-color: #2c3e50;
 @icon-transition: 0.3s ease;
-.sidebar-button {
-  position: absolute;
-  top: 0.5rem;
-  left: 1rem;
-  display: none;
-  @media (max-width: 768px) {
-    display: block;
-  }
-    // padding: 0.6rem;
-  cursor: pointer;
-  .icon {
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+
+  .sidebar-button {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    cursor: inherit;
+    padding: 9px 1rem;
+    width: 2rem;
+    cursor: pointer;
+
     span {
-      display: inline-block;
-      width: 100%;
-      height: 2px;
-      background-color: @text-color;
-      transition: transform @icon-transition;
-      &:nth-child(2) {
+      background-color: #060c21;
+      height: 3px;
+      
+      border-radius: 50px;
+      transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+      &:nth-of-type(1) {
+        width: 50%;
+      }
+
+      &:nth-of-type(2) {
         margin: 6px 0;
+        width: 100%;
+      }
+
+      &:nth-of-type(3) {
+        width: 75%;
       }
     }
-  }
-  .active {
-    span {
-      transition: transform @icon-transition;
-      &:nth-child(1) {
-        transform: rotate(45deg) translate3d(5.5px, 5.5px, 0);
-        transform-origin: center;
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked~span:nth-of-type(1) {
+        transform-origin: bottom;
+        transform: rotatez(45deg) translate(5px, 0px);
       }
-      &:nth-child(2) {
-        transform: scale3d(0, 0, 1);
+
+      &:checked~span:nth-of-type(2) {
+        width: 98%;
+        transform-origin: top;
+        transform: rotatez(-45deg);
       }
-      &:nth-child(3) {
-        transform: rotate(-45deg) translate3d(6px, -6px, 0);
-        transform-origin: center;
+
+      &:checked~span:nth-of-type(3) {
+        transform-origin: bottom;
+        width: 50%;
+        transform: translate(14px, -4px) rotatez(45deg);
       }
     }
   }
