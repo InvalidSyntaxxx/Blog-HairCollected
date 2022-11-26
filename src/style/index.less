@@ -1,23 +1,60 @@
 // 全局样式配置，主管全局变量
-body{
-    --bg-color: rgb(103, 103, 103);
-    --nav-color:rgb(152, 226, 68);
-    --ripple-color:rgba(255, 255, 255, 0.7);
+body {
+  --bg-color: rgb(103, 103, 103);
+  --nav-color: rgb(152, 226, 68);
+  --ripple-color: rgba(255, 255, 255, 0.7);
+  --title-bg-color: #32c422;
 }
 
 /* Ripple effect */
 .ripple {
-    background-position: center;
-    transition: background 0.8s;
-  
+  background-position: center;
+  transition: background 0.8s;
+
   &:hover {
-    background: radial-gradient(circle, transparent 1%, var(--nav-color) 1%) center/15000%;
+    background: radial-gradient(circle, transparent 1%, var(--nav-color) 1%)
+      center/15000%;
   }
+
   &:active {
     background-color: var(--ripple-color);
     background-size: 100%;
     transition: background 0s;
   }
 }
-  
-  
+
+/* Title effect */
+.title {
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  margin-left: 2px;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 32px;
+  background-color: var(--title-bg-color);
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: bold;
+
+  &::before {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    border-width: 2px 4px;
+    border-style: solid;
+    border-color: transparent var(--title-bg-color) var(--title-bg-color) transparent;
+    content: "";
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -8px;
+      border-width: 16px 8px 16px 0;
+      border-style: solid;
+      border-color: var(--title-bg-color) transparent var(--title-bg-color)
+        var(--title-bg-color);
+      content: "";
+    }
+  }
+}
