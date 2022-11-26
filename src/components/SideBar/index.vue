@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-08 16:03:06
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-22 20:38:47
+ * @LastEditTime: 2022-11-24 16:01:20
 -->
 <script setup lang="ts">
 import { DrawerPlacement, NDrawer, NDrawerContent } from "naive-ui";
@@ -41,8 +41,9 @@ provide('active',active);
         <n-drawer-content title="掉发收集站">
           <div>
             <!-- 左侧标题 -->
-            <h1>公告</h1>
+            <div class="title">公告</div>
             <!-- 左侧内容 -->
+            <br/>
             什么都没做呢，别急...
 
           </div>
@@ -53,20 +54,9 @@ provide('active',active);
 </template>
 <style lang="less" scoped>
 @mediaPhone: "(min-width: 768px)";
-.n-icon {
-  padding-left: 10px;
-  /* margin-top: 10px; 此属性不起效果*/
-  bottom: -5px;
-}
 .wrapper {
   display: block;
 }
 
-#drawer-target {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  // top: 4rem
-}
 
 </style>
