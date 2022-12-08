@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2022-11-02 13:03:16
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-22 22:16:02
+ * @LastEditTime: 2022-12-08 18:37:19
 -->
 <script setup lang="ts">
 import { ref } from "vue";
@@ -16,6 +16,8 @@ from "naive-ui";
 import Navigation from "../../components/NavigationBar/index.vue";
 import banner from "../../components/Banner/index.vue";
 import coverflow from "../../components/CoverFlow/index.vue";
+import wave from "../../components/Effects/waves.vue"
+import toolbar from "../../components/ToolBar/index.vue"
 </script>
 <template>
   <n-space>
@@ -35,9 +37,15 @@ import coverflow from "../../components/CoverFlow/index.vue";
        
        
         <!-- Footer部分 -->
+        <div style="width:100vw;height:100px">
+          <wave/>
+        </div>
       </n-layout>
+      <!-- 工具栏 -->
+      <toolbar/>
     </n-layout>
   </n-space>
+
 </template>
 <style scoped>
 * {
