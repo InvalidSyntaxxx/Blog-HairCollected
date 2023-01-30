@@ -4,8 +4,11 @@
  * @Author: 王远昭
  * @Date: 2022-07-04 19:37:34
  * @LastEditors: 王远昭
- * @LastEditTime: 2022-11-23 23:00:59
+ * @LastEditTime: 2023-01-30 22:04:21
 -->
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=InvalidSyntaxxx/Blog-HairCollected&amp;type=Date)](https://star-history.com/#InvalidSyntaxxx/Blog-HairCollected&amp;Date)
 
 ## 在线预览
 
